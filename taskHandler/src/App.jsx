@@ -7,17 +7,20 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Dashboard from './pages/Dashboard';
 import ProjectView from './pages/ProjectView';
-import CreateProject from './pages/createProject';
+import CreateProject from './pages/CreateProject';
 import Profile from './pages/Profile';
+import LandingPage from './pages/LandingPage';
+import './App.css'
 
 function App() {
   return (
-    <Router>
+     <Router>
       <AuthProvider>
         <Navbar />
-        <div className="pt-5">
+        <div className="pt-16">
           <Routes>
-            <Route path="/" element={<Login />} />
+            <Route path="/" element={<LandingPage/>}/>
+            <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/project/:id" element={<ProjectView />} />
@@ -27,7 +30,7 @@ function App() {
         </div>
       </AuthProvider>
     </Router>
-  );
+  )
 }
 
-export default App;
+export default App
